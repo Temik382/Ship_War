@@ -7,12 +7,14 @@
 
 using namespace std;
 
+// MAIN
+
 int main() {
     // 65001 — это кодовая страница UTF-8
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
     srand(time(NULL));
-    const int SIZE = 6;
+    const int SIZE = 6; 
     const int SHIP = 3;
     char letters[] = { '1', '2', '3', '4', '5', '6' };
 
