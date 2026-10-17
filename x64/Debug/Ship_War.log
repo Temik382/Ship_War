@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\Users\temik382\source\repos\Ship_War\Ship_War\Source.cpp(14,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Ship_War.vcxproj -> C:\Users\temik382\source\repos\Ship_War\x64\Debug\Ship_War.exe
