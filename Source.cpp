@@ -25,9 +25,9 @@ int main() {
         int x_m, y_m;
         cout << "Введите расположение вашего корабля по горизонтали: ";
         cin >> x_m;
-        cout << "Введите расположение вашего корабля по горизонтали: ";
+        cout << "Введите расположение вашего корабля по вертикали: ";
         cin >> y_m;
-        my_board[x_m][y_m] = 'S';
+        my_board[y_m - 1][x_m - 1] = 'S';
     }
 
     cout << "Отлично, вы расставили корабли!" << endl << "Начинаем играть!" << endl;
@@ -65,6 +65,7 @@ int main() {
         cin >> X;
         cout << "\nВведите цифру по вертикали: ";
         cin >> Y;
+
         if (X < 1 || X > SIZE || Y < 1 || Y > SIZE) {
             cout << "Координаты вне поля! Нажмите Enter для повтора...";
             cin.ignore();
@@ -73,6 +74,13 @@ int main() {
         }
         int x = X - 1;
         int y = Y - 1;
+
+        if (secret_computer_board[x][y] == '*') {
+            cout << "Вы уже стреляли по этому полю! Нажмите Enter для повтора...";
+            cin.ignore();
+            cin.get();
+            continue;
+        }
 
         if (secret_computer_board[x][y] == 'S') {
             cout << "Попадание!\n";
@@ -129,7 +137,6 @@ int main() {
             for (int j = 0; j < SIZE; ++j) {
                 cout << my_board[i][j] << " ";
             }
-
             cout << "\t\t" << letters[i] << " ";
             for (int k = 0; k < SIZE; ++k) {
                 cout << computer_board[i][k] << " ";
